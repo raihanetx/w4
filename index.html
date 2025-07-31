@@ -683,153 +683,130 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             max-height: 220px; /* about 2-3 reviews */
         }
 
-        .reviewer-profile-pic {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
+        .review-section {
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fdfdfd;
+        }
+        .review-section-header, .review-section-footer {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-right: 1rem;
-            flex-shrink: 0;
+            margin-bottom: 1.5rem;
         }
-
-        .review {
-            display: flex;
-            align-items: flex-start;
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 1.2rem;
-            margin-bottom: 1rem;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .review:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transform: translateY(-3px);
-        }
-
-        .review-content {
-            flex-grow: 1;
-        }
-
-        .review:last-child {
+        .review-section-footer {
+            margin-top: 1.5rem;
             margin-bottom: 0;
         }
-
-        .review h4 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
+        .header-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #ddd;
+            border-bottom: 1px solid #f0f0f0;
         }
-
-        .review .rating {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 0.5rem;
-        }
-
-        .review .rating .star {
+        .header-text {
+            padding: 0 1rem;
+            font-weight: bold;
             font-size: 1.2rem;
             color: var(--primary-color);
-            line-height: 1;
+            letter-spacing: 2px;
         }
-
-        .review-form-container {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-        }
-
-        #reviewForm .form-group {
-            margin-bottom: 1rem;
+        .reviews-list {
             display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .review-card {
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 1.5rem;
+        }
+        .review-card:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .review-author {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .review-date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .review-rating {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            color: #FFC107;
+        }
+        .review-comment {
+            font-style: italic;
+            color: #555;
+            line-height: 1.5;
         }
 
-        #reviewForm .form-group:has(textarea) {
-            align-items: flex-start;
+        .review-form .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.25rem;
         }
-
-        #reviewForm label {
-            font-weight: 600;
-            color: #333;
-            flex-basis: 100px;
-            flex-shrink: 0;
-            text-align: right;
+        .review-form label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
-
-        #reviewForm .form-group:has(textarea) label {
-            padding-top: 0.8rem;
-        }
-
-        #reviewForm input[type="text"],
-        #reviewForm textarea {
-            width: 100%;
-            padding: 0.8rem;
+        .review-form input[type="text"],
+        .review-form textarea {
+            background-color: #f0f2f5;
             border: 1px solid #ccc;
-            border-radius: 6px;
-            background-color: #fff;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            flex-grow: 1;
+            border-radius: 4px;
+            padding: 0.8rem;
+            font-family: inherit;
+            font-size: 1rem;
         }
-
-        #reviewForm input[type="text"]:focus,
-        #reviewForm textarea:focus {
+        .review-form input[type="text"]:focus,
+        .review-form textarea:focus {
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 5px rgba(143,135,241,0.3);
         }
-
-        .rating-group {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
         .rating-input {
-            display: inline-block;
             direction: ltr;
         }
-
         .rating-input span {
-            font-size: 2.2rem;
-            color: #e0e0e0;
+            font-size: 2rem;
+            color: #ccc;
             cursor: pointer;
-            transition: color 0.2s, transform 0.2s;
+            transition: color 0.2s;
+            padding: 0 0.1rem;
         }
-
-        .rating-input span:hover {
-            transform: scale(1.2);
-        }
-
-        .rating-input:hover span {
+        .rating-input span:hover,
+        .rating-input span.hover {
             color: #FFC107;
         }
-
-        .rating-input span:hover ~ span {
-            color: #e0e0e0;
-        }
-
         .rating-input span.selected {
             color: #FFC107;
         }
-
         .submit-review-btn {
             background-color: var(--primary-color);
             color: white;
-            padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 6px;
-            cursor: pointer;
+            border-radius: 4px;
+            padding: 0.8rem 1.5rem;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .submit-review-btn:hover {
+            filter: brightness(0.9);
         }
 
         .checkout-page { background-color: #f8f9fa; margin: 0; min-height: calc(100vh - var(--header-height)); }
@@ -2816,20 +2793,38 @@ Microsoft-এর অফিসিয়াল Activation Key, ইমেইলে ড
                 if (event.target.matches('.rating-input span')) {
                     const ratingInput = event.target.closest('.rating-input');
                     const ratingValue = event.target.dataset.value;
-                const hiddenInput = ratingInput.nextElementSibling; // This should be the hidden input
+                    const hiddenInput = ratingInput.nextElementSibling;
                     hiddenInput.value = ratingValue;
-
-                    // Update stars display
-                const stars = Array.from(ratingInput.querySelectorAll('span'));
-                const clickedIndex = stars.findIndex(star => star === event.target);
-
-                stars.forEach((star, index) => {
-                    if (index <= clickedIndex) {
-                        star.classList.add('selected');
-                    } else {
+                    const stars = Array.from(ratingInput.querySelectorAll('span'));
+                    stars.forEach(star => {
                         star.classList.remove('selected');
-                    }
+                        if (star.dataset.value <= ratingValue) {
+                            star.classList.add('selected');
+                        }
                     });
+                }
+            });
+
+            document.body.addEventListener('mouseover', function(event) {
+                if (event.target.matches('.rating-input span')) {
+                    const ratingInput = event.target.closest('.rating-input');
+                    const hoverValue = event.target.dataset.value;
+                    const stars = Array.from(ratingInput.querySelectorAll('span'));
+                    stars.forEach(star => {
+                        star.classList.remove('hover');
+                        if (star.dataset.value <= hoverValue) {
+                            star.classList.add('hover');
+                        }
+                    });
+                }
+            });
+
+            document.body.addEventListener('mouseout', function(event) {
+                if (event.target.matches('.rating-input, .rating-input *')) {
+                    const ratingInput = event.target.closest('.rating-input');
+                    if(ratingInput) {
+                        ratingInput.querySelectorAll('span').forEach(star => star.classList.remove('hover'));
+                    }
                 }
             });
 
@@ -2847,17 +2842,19 @@ Microsoft-এর অফিসিয়াল Activation Key, ইমেইলে ড
                         return;
                     }
 
-                    const newReview = { name, rating: parseInt(rating), comment };
+                    const date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                    const newReview = { name, rating: parseInt(rating), comment, date };
 
-                    // Save to local storage
                     let reviews = JSON.parse(localStorage.getItem(`reviews_${productId}`)) || [];
-                    reviews.push(newReview);
+                    reviews.unshift(newReview);
                     localStorage.setItem(`reviews_${productId}`, JSON.stringify(reviews));
 
                     showToast('Review submitted successfully!', 'success');
                     form.reset();
 
-                    // Refresh the reviews section
+                    const stars = Array.from(form.querySelectorAll('.rating-input span'));
+                    stars.forEach(star => star.classList.remove('selected', 'hover'));
+
                     const reviewsContainer = document.getElementById('reviewsTab');
                     if (reviewsContainer) {
                         reviewsContainer.innerHTML = generateReviewsHTML(productId);
@@ -3267,74 +3264,70 @@ function toggleSeeMore(btn, seeLess = false) {
 
 function generateReviewsHTML(productId) {
     let reviews = JSON.parse(localStorage.getItem(`reviews_${productId}`)) || [];
-    // Add dummy reviews if no reviews are in local storage
     if (reviews.length === 0) {
         reviews = [
-            { name: 'Rahim Islam', rating: 5, comment: 'অসাধারণ একটি প্রোডাক্ট! আমার সব সমস্যার সমাধান হয়ে গেছে।' },
-            { name: 'Fatima Khatun', rating: 4, comment: 'খুবই উপকারী। তবে ইন্সটলেশন গাইডটা আরেকটু সহজ হলে ভালো হতো।' },
-            { name: 'Abdullah Al Mahmud', rating: 5, comment: 'বেস্ট সার্ভিস! আমি সবাইকে রিকমেন্ড করবো।' },
-            { name: 'Sanjida Akter', rating: 4, comment: 'প্রোডাক্টটা আমার অনেক কাজে দিয়েছে। ধন্যবাদ THINK PLUS BD।' },
-            { name: 'Nusrat Jahan', rating: 5, comment: 'আমি খুবই সন্তুষ্ট। দ্রুত ডেলিভারি এবং ভালো সাপোর্টের জন্য ধন্যবাদ।' },
+            { name: 'John Doe', rating: 5, comment: 'Great product, very happy with my purchase!', date: 'July 30, 2025' },
+            { name: 'Sarah Khan', rating: 4, comment: 'Good quality, but delivery was a bit late.', date: 'July 28, 2025' },
         ];
     }
 
     const reviewsList = reviews.map(review => {
-        const profileLetter = review.name.charAt(0).toUpperCase();
-        const starsHTML = Array.from({ length: 5 }, (_, i) => {
-            return `<div class="star">${i < review.rating ? '★' : '☆'}</div>`;
-        }).join('');
-
+        const starsHTML = Array.from({ length: 5 }, (_, i) => i < review.rating ? '★' : '☆').join('');
         return `
-        <div class="review">
-            <div class="reviewer-profile-pic">${profileLetter}</div>
-            <div class="review-content">
-                <h4>${review.name}</h4>
-                <div class="rating">${starsHTML}</div>
-                <p>${review.comment}</p>
+        <div class="review-card">
+            <div class="review-header">
+                <span class="review-author">👤 ${review.name}</span>
+                <span class="review-date">${review.date}</span>
             </div>
+            <div class="review-rating">${starsHTML}</div>
+            <p class="review-comment">"${review.comment}"</p>
         </div>
     `}).join('');
 
     const reviewFormHTML = `
-        <div class="review-form-container">
-            <h3>Leave a Review</h3>
-            <form id="reviewForm">
-                <input type="hidden" name="productId" value="${productId}">
-                <div class="form-group">
-                    <label for="reviewerName">Your Name:</label>
-                    <input type="text" id="reviewerName" name="name" required>
-                </div>
-                <div class="form-group rating-group">
-                    <label>Rating:</label>
-                    <div class="rating-input">
-                        <span data-value="1">☆</span>
-                        <span data-value="2">☆</span>
-                        <span data-value="3">☆</span>
-                        <span data-value="4">☆</span>
-                        <span data-value="5">☆</span>
-                    </div>
-                    <input type="hidden" id="reviewerRating" name="rating" required>
-                </div>
-                <div class="form-group">
-                    <label for="reviewComment">Your Review:</label>
-                    <textarea id="reviewComment" name="comment" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="submit-review-btn">Submit Review</button>
-            </form>
+        <div class="review-section-header">
+            <span class="header-line"></span>
+            <span class="header-text">✏️ SUBMIT YOUR REVIEW</span>
+            <span class="header-line"></span>
         </div>
+        <form id="reviewForm" class="review-form">
+            <input type="hidden" name="productId" value="${productId}">
+            <div class="form-group">
+                <label for="reviewerName">Your Name:</label>
+                <input type="text" id="reviewerName" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Rating:</label>
+                <div class="rating-input">
+                    <span data-value="1">★</span><span data-value="2">★</span><span data-value="3">★</span><span data-value="4">★</span><span data-value="5">★</span>
+                </div>
+                <input type="hidden" id="reviewerRating" name="rating" required>
+            </div>
+            <div class="form-group">
+                <label for="reviewComment">Your Review:</label>
+                <textarea id="reviewComment" name="comment" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="submit-review-btn">✅ Submit Review</button>
+        </form>
     `;
 
-    if (reviews.length === 0) {
-        return reviewFormHTML;
-    }
-
     return `
-        <div class="expandable-content">
-            ${reviewsList}
+        <div class="review-section">
+            <div class="review-section-header">
+                <span class="header-line"></span>
+                <span class="header-text">⭐ REVIEWS ⭐</span>
+                <span class="header-line"></span>
+            </div>
+            <div class="reviews-list">
+                ${reviewsList}
+            </div>
+            <div class="form-container">
+                ${reviewFormHTML}
+            </div>
+             <div class="review-section-footer">
+                <span class="header-line"></span>
+            </div>
         </div>
-        ${reviews.length > 3 ? '<button class="see-more-btn" onclick="toggleSeeMore(this)">See All Reviews</button>' : ''}
-        ${reviews.length > 3 ? '<button class="see-less-btn" onclick="toggleSeeMore(this, true)" style="display:none;">See Less</button>' : ''}
-        ${reviewFormHTML}
     `;
 }
 
