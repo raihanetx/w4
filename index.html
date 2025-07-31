@@ -747,14 +747,26 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
         }
 
         #reviewForm .form-group {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #reviewForm .form-group:has(textarea) {
+            align-items: flex-start;
         }
 
         #reviewForm label {
-            display: block;
             font-weight: 600;
             color: #333;
-            margin-bottom: 0.5rem;
+            flex-basis: 100px;
+            flex-shrink: 0;
+            text-align: right;
+        }
+
+        #reviewForm .form-group:has(textarea) label {
+            padding-top: 0.8rem;
         }
 
         #reviewForm input[type="text"],
@@ -765,6 +777,7 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             border-radius: 6px;
             background-color: #fff;
             transition: border-color 0.2s, box-shadow 0.2s;
+            flex-grow: 1;
         }
 
         #reviewForm input[type="text"]:focus,
