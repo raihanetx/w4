@@ -29,6 +29,9 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THINK PLUS BD - Premium Digital Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* --- START OF FILE style.css --- */
 
@@ -103,7 +106,7 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Lexend', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -684,103 +687,79 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
         }
 
         .review-section {
-            font-family: 'Courier New', Courier, monospace;
-            color: #333;
-            padding: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #fdfdfd;
-        }
-        .review-section-header, .review-section-footer {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        .review-section-footer {
-            margin-top: 1.5rem;
-            margin-bottom: 0;
-        }
-        .header-line {
-            flex-grow: 1;
-            height: 1px;
-            background-color: #ddd;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .header-text {
-            padding: 0 1rem;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            letter-spacing: 2px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
         .reviews-list {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            margin-bottom: 2rem;
         }
         .review-card {
-            border-bottom: 1px dashed #ccc;
-            padding-bottom: 1.5rem;
-        }
-        .review-card:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         .review-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         .review-author {
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
+            color: var(--primary-color);
         }
         .review-date {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #777;
         }
         .review-rating {
-            margin-bottom: 0.75rem;
-            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
             color: #FFC107;
         }
         .review-comment {
-            font-style: italic;
-            color: #555;
-            line-height: 1.5;
+            color: #333;
+            line-height: 1.6;
         }
-
+        .form-container {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+        }
         .review-form .form-group {
             display: flex;
             flex-direction: column;
             margin-bottom: 1.25rem;
         }
         .review-form label {
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+            color: #333;
         }
         .review-form input[type="text"],
         .review-form textarea {
-            background-color: #f0f2f5;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 0.8rem;
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            padding: 0.9rem;
             font-family: inherit;
             font-size: 1rem;
+            width: 100%;
         }
         .review-form input[type="text"]:focus,
         .review-form textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 5px rgba(143,135,241,0.3);
-        }
-        .rating-input {
-            direction: ltr;
+            box-shadow: 0 0 0 3px rgba(143,135,241,0.15);
         }
         .rating-input span {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #ccc;
             cursor: pointer;
             transition: color 0.2s;
@@ -797,16 +776,32 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             background-color: var(--primary-color);
             color: white;
             border: none;
-            border-radius: 4px;
-            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            padding: 0.9rem 1.5rem;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .submit-review-btn:hover {
-            filter: brightness(0.9);
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+        @media (min-width: 769px) {
+            .review-section {
+                grid-template-columns: 2fr 1fr;
+                gap: 3rem;
+            }
+            .reviews-list {
+                order: 1;
+            }
+            .form-container {
+                order: 2;
+                position: sticky;
+                top: 120px;
+                align-self: start;
+            }
         }
 
         .checkout-page { background-color: #f8f9fa; margin: 0; min-height: calc(100vh - var(--header-height)); }
@@ -3285,11 +3280,6 @@ function generateReviewsHTML(productId) {
     `}).join('');
 
     const reviewFormHTML = `
-        <div class="review-section-header">
-            <span class="header-line"></span>
-            <span class="header-text">✏️ SUBMIT YOUR REVIEW</span>
-            <span class="header-line"></span>
-        </div>
         <form id="reviewForm" class="review-form">
             <input type="hidden" name="productId" value="${productId}">
             <div class="form-group">
@@ -3305,7 +3295,7 @@ function generateReviewsHTML(productId) {
             </div>
             <div class="form-group">
                 <label for="reviewComment">Your Review:</label>
-                <textarea id="reviewComment" name="comment" rows="3" required></textarea>
+                <textarea id="reviewComment" name="comment" rows="4" required></textarea>
             </div>
             <button type="submit" class="submit-review-btn">✅ Submit Review</button>
         </form>
@@ -3313,19 +3303,11 @@ function generateReviewsHTML(productId) {
 
     return `
         <div class="review-section">
-            <div class="review-section-header">
-                <span class="header-line"></span>
-                <span class="header-text">⭐ REVIEWS ⭐</span>
-                <span class="header-line"></span>
-            </div>
             <div class="reviews-list">
                 ${reviewsList}
             </div>
             <div class="form-container">
                 ${reviewFormHTML}
-            </div>
-             <div class="review-section-footer">
-                <span class="header-line"></span>
             </div>
         </div>
     `;
